@@ -7,3 +7,8 @@ yumrepo { 'MongoDB-Repo':
   gpgkey   => 'https://www.mongodb.org/static/pgp/server-4.0.asc',
   enabled  => '1',
 }
+
+package { 'mongodb-org':
+  ensure   => 'present',
+  require  => Yumrepo['MongoDB-Repo'],
+}
